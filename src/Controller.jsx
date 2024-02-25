@@ -3,7 +3,7 @@ import View from './View';
 import fetchData from './Model';
 
 const Controller = () => {
-    const [numbers, setNumbers] = useState([[0, 0, 1]]);
+    const [currents, setCurrents] = useState([[0, 0, 1]]);
     const [xRange, setXRange] = useState([-5, 5]);
     const [yRange, setYRange] = useState([-5, 5]);
     const [density, setDensity] = useState(3);
@@ -26,7 +26,7 @@ const Controller = () => {
         }
         setLoading(true);
         await fetchData(JSON.stringify({
-            "currents": numbers,
+            "currents": currents,
             "x": xRange,
             "y": yRange,
             "density": density,
@@ -37,11 +37,11 @@ const Controller = () => {
 
     return (
         <View
-            numbers={numbers}
+            currents={currents}
             xRange={xRange}
             yRange={yRange}
             density={density}
-            setNumbers={setNumbers}
+            setCurrents={setCurrents}
             setXRange={setXRange}
             setYRange={setYRange}
             setDensity={setDensity}

@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import {Form, Button, Spinner} from 'react-bootstrap';
 
 const View = ({
-                  numbers,
+                  currents,
                   xRange,
                   yRange,
                   density,
-                  setNumbers,
+                  setCurrents,
                   setXRange,
                   setYRange,
                   setDensity,
@@ -33,21 +33,21 @@ const View = ({
     };
 
     const handleChange = (rowIndex, columnIndex, value) => {
-        const newNumbers = numbers.map((row, index) =>
+        const newNumbers = currents.map((row, index) =>
             index === rowIndex ? [...row.slice(0, columnIndex), parseFloat(value), ...row.slice(columnIndex + 1)] : row
         );
-        setNumbers(newNumbers);
+        setCurrents(newNumbers);
 
     };
 
     const handleAddField = () => {
-        setNumbers([...numbers, [0, 0, 0]]);
+        setCurrents([...currents, [0, 0, 0]]);
     };
 
     const handleRemoveField = (index) => {
-        const newNumbers = [...numbers];
+        const newNumbers = [...currents];
         newNumbers.splice(index, 1);
-        setNumbers(newNumbers);
+        setCurrents(newNumbers);
     };
 
     return (
@@ -128,7 +128,7 @@ const View = ({
                         <div className="flex-fill">I</div>
                         <div style={{marginRight: '90px'}}></div>
                     </div>
-                    {numbers.map((row, rowIndex) => (
+                    {currents.map((row, rowIndex) => (
                         <div key={rowIndex} className="d-flex" style={{alignItems: 'center', marginBottom: '10px'}}>
                             {row.map((number, columnIndex) => (
                                 <React.Fragment key={columnIndex}>
