@@ -1,5 +1,4 @@
 import React from 'react';
-import View from './View';
 import Controller from "./Controller";
 
 const App = () => {

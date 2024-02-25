@@ -4,6 +4,7 @@ const fetchData = async (json, setImage) => {
         const response = await fetch(
             'http://bitbox228.pythonanywhere.com/magnetic_field_plot',
             {
+                mode: "cors",
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
