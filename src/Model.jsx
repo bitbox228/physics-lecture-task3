@@ -2,7 +2,7 @@ const fetchData = async (json, setImage) => {
     console.log(json)
     try {
         const response = await fetch(
-            'http://bitbox228.pythonanywhere.com/magnetic_field_plot',
+            'https://bitbox228.pythonanywhere.com/magnetic_field_plot',
             {
                 mode: "cors",
                 method: 'POST',
